@@ -23,8 +23,7 @@ Phase 6: Deliverables  ←  Phase 5: Resume Generation  ←  Phase 4: Interview
 ## Install
 
 ```bash
-# Clone to your Claude Code skills directory
-git clone https://github.com/dominoghm123/skills.git ~/.claude/skills/career-pivot-resume
+npx skills add dominoghm123/dailyskills --skill career-pivot-resume
 ```
 
 Or manually copy `SKILL.md` to `~/.claude/skills/career-pivot-resume/`.
@@ -60,11 +59,9 @@ Here's the JD I'm targeting: [paste JD]
 ```
 career-pivot-resume/
 ├── SKILL.md          # Skill prompt (the core logic)
-├── evals/
-│   └── evals.json    # Evaluation scenarios
 ├── README.md
-├── LICENSE           # MIT
-└── .gitignore
+└── evals/
+    └── evals.json    # Evaluation scenarios
 ```
 
 ## License

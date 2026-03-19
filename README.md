@@ -1,6 +1,6 @@
-# Skills
+# Daily Skills
 
-A collection of Claude Code skills for specialized workflows.
+A collection of AI agent skills for specialized workflows.
 
 ## Available Skills
 
@@ -10,17 +10,19 @@ A collection of Claude Code skills for specialized workflows.
 
 ## Install
 
-Clone this repo and symlink (or copy) the skill folder you need into `~/.claude/skills/`:
-
 ```bash
-git clone https://github.com/dominoghm123/skills.git
-ln -s "$(pwd)/skills/career-pivot-resume" ~/.claude/skills/career-pivot-resume
+# Install all skills
+npx skills add dominoghm123/dailyskills
+
+# Install a specific skill
+npx skills add dominoghm123/dailyskills --skill career-pivot-resume
 ```
 
-Or copy a single skill directly:
+Or manually clone and symlink:
 
 ```bash
-cp -r skills/career-pivot-resume ~/.claude/skills/
+git clone https://github.com/dominoghm123/dailyskills.git
+ln -s "$(pwd)/dailyskills/career-pivot-resume" ~/.claude/skills/career-pivot-resume
 ```
 
 ## License
