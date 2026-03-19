@@ -1,0 +1,52 @@
+{
+  "skill_name": "career-pivot-resume",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "我想从数据分析师转行做产品经理。这是我看中的一个JD：\n\n【产品经理 - 某AI创业公司】\n岗位职责：\n1. 负责AI SaaS产品的需求分析与功能规划\n2. 与研发团队协作，推动产品迭代\n3. 进行用户调研，收集反馈并转化为产品需求\n4. 制定产品路线图，跟踪关键指标\n\n任职要求：\n1. 2年以上产品经理经验\n2. 熟悉AI/大模型产品优先\n3. 优秀的数据分析能力\n4. 良好的跨部门沟通能力\n\n我的背景：\n- 3年数据分析师，在字节跳动做用户增长分析\n- 熟练SQL/Python/Tableau\n- 做过一个个人AI小工具的side project\n- 本科统计学\n\n请帮我做JD分析和简历改写。",
+      "expected_output": "Should produce: JD analysis with P1/P2/P3 tiering, gap analysis mapping data analyst skills to PM requirements, ask about interview preference, then generate a tailored resume in Chinese. Should identify data analysis as a transferable strength and lack of PM title as the main gap.",
+      "files": [],
+      "assertions": [
+        {"name": "jd_analysis_produced", "type": "file_exists", "description": "Phase 2 JD analysis output file exists"},
+        {"name": "gap_analysis_produced", "type": "file_exists", "description": "Phase 3 gap analysis output file exists"},
+        {"name": "resume_produced", "type": "file_exists", "description": "Tailored resume output file exists"},
+        {"name": "interview_prep_produced", "type": "file_exists", "description": "Interview prep guide produced (interview was conducted)"},
+        {"name": "cognitive_summary_produced", "type": "file_exists", "description": "Cognitive summary produced (interview was conducted)"},
+        {"name": "p1_p2_p3_tiering", "type": "content_check", "description": "JD analysis includes priority tiering (P1/P2/P3)"},
+        {"name": "language_match_cn", "type": "content_check", "description": "Analysis outputs are in Chinese (matching user's language)"},
+        {"name": "transferable_skills_mapped", "type": "content_check", "description": "Gap analysis maps data analyst skills to PM requirements with explicit migration logic"}
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "I'm a mechanical engineer looking to transition into developer relations at a tech company. Here are 3 JDs I'm considering:\n\nJD1: Developer Advocate at Vercel - requires 2+ years DevRel, strong technical writing, public speaking, open source contributions\n\nJD2: Developer Relations Engineer at Stripe - requires software engineering background, API documentation experience, community building\n\nJD3: Technical Community Manager at GitHub - requires community management, content creation, event planning, developer ecosystem understanding\n\nMy background:\n- 4 years mechanical engineer at Boeing\n- Run a popular YouTube channel about 3D printing (15K subscribers)\n- Contribute to open source CAD tools on GitHub\n- Give talks at local maker meetups\n- Built a personal blog with Next.js\n\nI want the full workflow - analysis, gap assessment, interview, and resume.",
+      "expected_output": "Should produce: multi-JD competency synthesis across 3 DevRel roles, identify YouTube/open source/speaking as strong transferable evidence, run structured interview, generate English resume. Should handle the multi-JD mode properly with cross-role competency clusters.",
+      "files": [],
+      "assertions": [
+        {"name": "multi_jd_synthesis", "type": "content_check", "description": "Analysis synthesizes across all 3 JDs with competency clusters and frequency counts"},
+        {"name": "jd_analysis_produced", "type": "file_exists", "description": "Phase 2 JD analysis output file exists"},
+        {"name": "gap_analysis_produced", "type": "file_exists", "description": "Phase 3 gap analysis output file exists"},
+        {"name": "interview_prep_produced", "type": "file_exists", "description": "Interview prep guide output file exists"},
+        {"name": "cognitive_summary_produced", "type": "file_exists", "description": "Cognitive summary output file exists"},
+        {"name": "multiple_resumes", "type": "content_check", "description": "At least 2 tailored resumes produced for different roles"},
+        {"name": "english_throughout", "type": "content_check", "description": "All outputs in English matching user's language"}
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "我有两份JD想投，一份是拓竹科技的海外内容营销，一份是Machinepulse的Agent Content Operations。我已经有现成的简历了，在这个路径：cv-2026/Somewhere in AI Industry/ZH/戴绮呈-海外内容营销&产品营销.md\n\n请帮我针对这两个岗位分别生成简历，不需要interview，直接出简历就行。拓竹的用中文，Machinepulse的用英文。",
+      "expected_output": "Should respect the user's request to skip interview. Must still produce JD analysis and gap analysis (mandatory phases). Should read the existing resume, generate two resumes with different emphasis. Should NOT produce interview prep or cognitive summary (per skip-interview deliverable rules).",
+      "files": ["cv-2026/Somewhere in AI Industry/ZH/戴绮呈-海外内容营销&产品营销.md"],
+      "assertions": [
+        {"name": "interview_skipped", "type": "content_check", "description": "Agent respects user's request to skip interview"},
+        {"name": "cn_resume_produced", "type": "file_exists", "description": "Chinese resume for 拓竹科技 produced"},
+        {"name": "en_resume_produced", "type": "file_exists", "description": "English resume for Machinepulse produced"},
+        {"name": "jd_analysis_produced", "type": "file_exists", "description": "JD analysis produced even when interview is skipped (Phase 2 is mandatory)"},
+        {"name": "gap_analysis_produced", "type": "file_exists", "description": "Gap analysis produced even when interview is skipped (Phase 3 is mandatory)"},
+        {"name": "no_interview_prep", "type": "content_check", "description": "No interview prep guide produced (skip-interview delivers only 3 items)"},
+        {"name": "no_cognitive_summary", "type": "content_check", "description": "No cognitive summary produced (skip-interview delivers only 3 items)"},
+        {"name": "existing_resume_read", "type": "content_check", "description": "Agent reads the user's existing resume before generating"}
+      ]
+    }
+  ]
+}
