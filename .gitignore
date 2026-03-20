@@ -2,3 +2,6 @@
 *.swp
 *.swo
 *~
+*.skill
+node_modules/
+
