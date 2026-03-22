@@ -17,6 +17,7 @@ npx skills add dominoghm123/dailyskills
 # Install a specific skill
 npx skills add dominoghm123/dailyskills --skill career-pivot-resume
 npx skills add dominoghm123/dailyskills --skill ielts-writing-tutor
+npx skills add dominoghm123/dailyskills --skill project-abroad-helper
 ```
 
 ### Invoking a skill
@@ -25,8 +26,8 @@ Skills activate automatically when you describe your task — no commands needed
 
 | Agent | Syntax |
 |---|---|
-| Claude Code | `/career-pivot-resume` · `/ielts-writing-tutor` |
-| Cursor | `@career-pivot-resume` · `@ielts-writing-tutor` |
+| Claude Code | `/career-pivot-resume` · `/ielts-writing-tutor` · `/project-abroad-helper` |
+| Cursor | `@career-pivot-resume` · `@ielts-writing-tutor` · `@project-abroad-helper` |
 | Other agents | Refer to your agent's skill invocation docs |
 
 ---
@@ -136,6 +137,60 @@ Claude: Band 6.0 overall
 
 ---
 
+## project-abroad-helper
+
+All-in-one overseas opportunity discovery and application assistant — not just degree programs. Covers WHV, digital nomad visas, job seeker visas, residencies, study tours, and more, anywhere in the world. Remembers your profile and application status across sessions.
+
+**Auto-triggers on:** going abroad, WHV, working holiday, digital nomad, study abroad, SOP, overseas program, visa application, 留学, 出国, 打工度假, 数字游民, 海外项目
+
+### Opportunity types covered
+
+| Type | Examples |
+|---|---|
+| Master's / PhD | Europe, Singapore, Australia, Canada |
+| Working Holiday Visa (WHV) | Australia, New Zealand, Canada, Ireland, Japan |
+| Digital Nomad Visa | Portugal, Estonia, Thailand, Bali, Spain |
+| Job Seeker Visa | Germany, Spain, Portugal, Austria |
+| Study tours / Language schools | Immersive short-term programs worldwide |
+| Exchange programs | University exchange, academic visits |
+| Artist residencies | Creative overseas residency programs |
+| Volunteer programs | Overseas volunteer with housing / stipend |
+
+### Evaluation dimensions
+
+Every opportunity is evaluated across five equal dimensions: employment resources, city vibe, local salary, PR/residency pathway, and scholarship/funding support.
+
+### Example
+
+```
+You:    Architecture background, IELTS 7.5, interested in Tech × Art intersection.
+        Looking for something in Europe — open to any format, not just a degree.
+
+Claude: Here are 4 options that fit your profile:
+
+        | Program / Visa        | Type          | Country  | Cost / Funding        | PR Path | Employment Highlight   | Deadline  |
+        |-----------------------|---------------|----------|-----------------------|---------|------------------------|-----------|
+        | TU Delft MSc RMIT     | Master's      | NL       | ~€2,000/yr tuition    | ✅ 5yr  | Top design firms nearby| Jan 15    |
+        | Portugal D8 Nomad     | Digital Nomad | PT       | €760/mo income req    | ✅ 5yr  | Lisbon tech scene      | Rolling   |
+        | Germany Job Seeker    | Job Seeker    | DE       | Self-funded 6 months  | ✅      | Strong UX market       | Rolling   |
+        | Ars Electronica Res.  | Residency     | AT       | Stipend provided      | ❌      | AI × Art, top network  | Mar 1     |
+
+        TU Delft stands out for your Tech × Art focus — the industrial design ecosystem
+        in Delft is one of Europe's strongest, and the 5-year residence path is clean.
+```
+
+### What you get
+
+| Deliverable | What it is |
+|---|---|
+| Opportunity shortlist | Table + personalized notes on why each fits your profile |
+| Requirements breakdown | Checklist of materials, gap analysis against your profile |
+| Application documents | SOP, CV, motivation letter, cold email to professors |
+| Application tracker | Status, deadlines, and materials tracked across sessions |
+| Deadline reminders | 30-day alerts at the start of every session |
+
+---
+
 ## License
 
 MIT
@@ -157,6 +212,7 @@ npx skills add dominoghm123/dailyskills
 # 安装指定技能
 npx skills add dominoghm123/dailyskills --skill career-pivot-resume
 npx skills add dominoghm123/dailyskills --skill ielts-writing-tutor
+npx skills add dominoghm123/dailyskills --skill project-abroad-helper
 ```
 
 ### 如何调用技能
@@ -165,8 +221,8 @@ npx skills add dominoghm123/dailyskills --skill ielts-writing-tutor
 
 | Agent | 调用方式 |
 |---|---|
-| Claude Code | `/career-pivot-resume` · `/ielts-writing-tutor` |
-| Cursor | `@career-pivot-resume` · `@ielts-writing-tutor` |
+| Claude Code | `/career-pivot-resume` · `/ielts-writing-tutor` · `/project-abroad-helper` |
+| Cursor | `@career-pivot-resume` · `@ielts-writing-tutor` · `@project-abroad-helper` |
 | 其他 Agent | 参考对应 Agent 的技能调用文档 |
 
 ---
@@ -274,6 +330,60 @@ Claude：综合评分 6.0
 | 词汇升级建议 | 3–5 处具体短语替换，附理由说明 |
 | 结构优化指导 | 段落层面的组织建议；TEE 写作法辅导 |
 | 范文改写 | Band 7（可学习版）和/或 Band 8–9（最优版）：完整范文 → 逐段解析 → 核心提升汇总表 |
+
+---
+
+## project-abroad-helper（海外项目申请助手）
+
+全类型海外机会发现与申请助手——不只是留学，打工度假、数字游民签证、求职签证、艺术驻留全都覆盖，全球范围，跨 session 记忆你的档案和申请进度。
+
+**自动触发条件：** 出国、留学、WHV、打工度假、数字游民、海外项目、SOP、申请文书、签证、出海、帮我找项目
+
+### 覆盖的机会类型
+
+| 类型 | 举例 |
+|---|---|
+| 硕士 / 博士学位 | 欧洲、新加坡、澳大利亚、加拿大等 |
+| 打工度假签证（WHV） | 澳大利亚、新西兰、加拿大、爱尔兰、日本等 |
+| 数字游民签证 | 葡萄牙、爱沙尼亚、泰国、巴厘岛、西班牙等 |
+| 求职签证 | 德国、西班牙、葡萄牙、奥地利等 |
+| 短期游学 / 语言学校 | 全球性价比高的沉浸式项目 |
+| 交换项目 | 大学交换、学术访问 |
+| 艺术家驻留 | 创意方向的海外驻留 |
+| 志愿者项目 | 有住宿或津贴的海外志愿者 |
+
+### 评估维度
+
+每个机会从五个平等权重的维度评估：就业资源、城市氛围、当地薪酬、居留路径、经费支持。
+
+### 使用示例
+
+```
+你：    建筑背景，雅思 7.5，对 Tech × Art 方向感兴趣。
+        想去欧洲，不限形式，不一定要读学位。
+
+Claude：以下 4 个方向符合你的情况：
+
+        | 项目 / 签证           | 类型     | 国家 | 费用 / 资金         | 居留路径 | 就业亮点             | 截止日期 |
+        |-----------------------|----------|------|---------------------|----------|----------------------|----------|
+        | TU Delft MSc RMIT     | 硕士     | 荷兰 | ~€2,000/年学费      | ✅ 5年   | 顶级设计公司聚集     | 1月15日  |
+        | 葡萄牙 D8 数字游民    | 数字游民 | 葡萄牙 | 月收入€760要求    | ✅ 5年   | 里斯本科技生态成熟   | 随时申请 |
+        | 德国求职签证          | 求职签证 | 德国 | 自费，最长6个月     | ✅       | UX 市场需求强劲      | 随时申请 |
+        | Ars Electronica 驻留  | 艺术驻留 | 奥地利 | 提供津贴          | ❌       | AI × Art 顶级圈子   | 3月1日   |
+
+        TU Delft 最契合你的 Tech × Art 方向——代尔夫特的工业设计生态是欧洲最强之一，
+        5 年居留路径也清晰。
+```
+
+### 你会得到什么
+
+| 交付物 | 内容说明 |
+|---|---|
+| 项目推荐清单 | 表格 + 个性化点评，说明为什么适合你 |
+| 申请要求拆解 | 材料清单 + 对照你的档案的 Gap 分析 |
+| 申请文书 | SOP、CV、动机信、教授套磁邮件 |
+| 申请追踪 | 跨 session 记录状态、截止日期、材料进度 |
+| Deadline 提醒 | 30 天内截止自动在对话开头提醒 |
 
 ---
 
