@@ -134,8 +134,19 @@ function deriveHint(diag) {
 }
 
 async function main() {
-  const configPath = path.resolve("config.yaml");
-  const root = yaml.parse(fs.readFileSync(configPath, "utf8"));
+  const primaryConfigPath = path.resolve("config.yaml");
+  const fallbackConfigPath = path.resolve("config.example.yaml");
+  let root = {};
+  let configSource = "defaults";
+
+  if (fs.existsSync(primaryConfigPath)) {
+    root = yaml.parse(fs.readFileSync(primaryConfigPath, "utf8")) || {};
+    configSource = "config.yaml";
+  } else if (fs.existsSync(fallbackConfigPath)) {
+    root = yaml.parse(fs.readFileSync(fallbackConfigPath, "utf8")) || {};
+    configSource = "config.example.yaml";
+  }
+
   const cdpUrl = root?.browser?.cdp_url || "http://127.0.0.1:9222";
   const { endpointBase, host, port } = parseHostPort(cdpUrl);
 
@@ -197,6 +208,7 @@ async function main() {
   fs.writeFileSync(outPath, JSON.stringify(diagnostics, null, 2), "utf8");
 
   console.log(`CDP_URL=${cdpUrl}`);
+  console.log(`CONFIG_SOURCE=${configSource}`);
   console.log(`TCP_OK=${diagnostics.tcp.ok}`);
   console.log(`VERSION_OK=${diagnostics.version.ok}`);
   console.log(`TAB_COUNT=${diagnostics.list.tabCount ?? "unknown"}`);
