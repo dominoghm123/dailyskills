@@ -1,0 +1,20 @@
+{
+  "name": "bosszp-skill",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "prod:apply": "node scripts/prod_apply_api.mjs",
+    "debug:cdp": "node scripts/debug_chrome_unavailable.mjs",
+    "count:candidates": "node scripts/count_candidates.mjs",
+    "run:scheduled": "node scripts/scheduled_run.mjs"
+  },
+  "dependencies": {
+    "csv-stringify": "^6.5.0",
+    "playwright": "^1.44.0",
+    "yaml": "^2.4.5"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

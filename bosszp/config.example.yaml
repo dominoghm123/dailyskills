@@ -1,0 +1,37 @@
+profiles:
+  default:
+    search:
+      keywords: ["B端AI产品运营", "AI内容运营", "平台产品运营"]
+      city: ["北京", "上海", "广州", "深圳"]
+      salary: "10K以上"
+      experience: ["1年以内", "1-3年", "3-5年"]
+      education: "本科"
+    limits:
+      daily_cap: 30
+      run_cap: 10
+    resume_map:
+      "AI产品运营": "resumes/ai-product.md"
+      "内容运营": "resumes/content.md"
+      "平台运营AI": "resumes/platform-ai.md"
+    output:
+      csv_path: "output/results.csv"
+    greeting: "请替换为你的打招呼文案"
+    resume_image: "/absolute/path/to/your-resume-image.png"
+
+browser:
+  user_data_dir: "profile/Default"
+  headless: false
+  slow_mo_ms: 80
+  timeout_ms: 30000
+  channel: "chrome"
+  user_agent: "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"
+  locale: "zh-CN"
+  timezone_id: "Asia/Shanghai"
+  cdp_url: "http://127.0.0.1:9222"
+
+automation:
+  min_delay_ms: 1800
+  max_delay_ms: 5200
+  schedule_time: "16:00"
+  schedule_days: "weekdays"
+  schedule_timezone: "Asia/Shanghai"

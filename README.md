@@ -18,6 +18,7 @@ npx skills add dominoghm123/dailyskills
 npx skills add dominoghm123/dailyskills --skill career-pivot-resume
 npx skills add dominoghm123/dailyskills --skill ielts-writing-tutor
 npx skills add dominoghm123/dailyskills --skill project-abroad-helper
+npx skills add dominoghm123/dailyskills --skill bosszp
 ```
 
 ### Invoking a skill
@@ -26,8 +27,8 @@ Skills activate automatically when you describe your task — no commands needed
 
 | Agent | Syntax |
 |---|---|
-| Claude Code | `/career-pivot-resume` · `/ielts-writing-tutor` · `/project-abroad-helper` |
-| Cursor | `@career-pivot-resume` · `@ielts-writing-tutor` · `@project-abroad-helper` |
+| Claude Code | `/career-pivot-resume` · `/ielts-writing-tutor` · `/project-abroad-helper` · `/bosszp` |
+| Cursor | `@career-pivot-resume` · `@ielts-writing-tutor` · `@project-abroad-helper` · `@bosszp` |
 | Other agents | Refer to your agent's skill invocation docs |
 
 ---
@@ -191,6 +192,34 @@ Claude: Here are 4 options that fit your profile:
 
 ---
 
+## bosszp
+
+Boss直聘 outreach automation skill for real production batches via an existing Chrome CDP session.
+
+**Auto-triggers on:** Boss直聘/BossZP outreach, batch apply, Chrome unavailable, CDP attach failures, delivery/failure reporting
+
+### What it handles
+
+| Capability | Details |
+|---|---|
+| Production batch run | Sends greeting + resume image flow and writes CSV records |
+| CDP resilience | Retries attach, captures diagnostics, emits blocker hints |
+| Failure diagnostics | One-command debug for `Chrome/CDP unavailable` |
+| Custom schedule | Supports `--time/--days/--timezone` via CLI scheduler |
+| Run reporting | Summarizes total, 已投递, 投递失败 and blocker categories |
+
+### Typical commands inside the skill
+
+```bash
+npm install
+./bin/launch-chrome.sh 9222
+npm run debug:cdp
+npm run run:scheduled -- --time 16:00 --days weekdays --timezone Asia/Shanghai
+npm run prod:apply
+```
+
+---
+
 ## License
 
 MIT
@@ -213,6 +242,7 @@ npx skills add dominoghm123/dailyskills
 npx skills add dominoghm123/dailyskills --skill career-pivot-resume
 npx skills add dominoghm123/dailyskills --skill ielts-writing-tutor
 npx skills add dominoghm123/dailyskills --skill project-abroad-helper
+npx skills add dominoghm123/dailyskills --skill bosszp
 ```
 
 ### 如何调用技能
@@ -221,8 +251,8 @@ npx skills add dominoghm123/dailyskills --skill project-abroad-helper
 
 | Agent | 调用方式 |
 |---|---|
-| Claude Code | `/career-pivot-resume` · `/ielts-writing-tutor` · `/project-abroad-helper` |
-| Cursor | `@career-pivot-resume` · `@ielts-writing-tutor` · `@project-abroad-helper` |
+| Claude Code | `/career-pivot-resume` · `/ielts-writing-tutor` · `/project-abroad-helper` · `/bosszp` |
+| Cursor | `@career-pivot-resume` · `@ielts-writing-tutor` · `@project-abroad-helper` · `@bosszp` |
 | 其他 Agent | 参考对应 Agent 的技能调用文档 |
 
 ---
@@ -384,6 +414,34 @@ Claude：以下 4 个方向符合你的情况：
 | 申请文书 | SOP、CV、动机信、教授套磁邮件 |
 | 申请追踪 | 跨 session 记录状态、截止日期、材料进度 |
 | Deadline 提醒 | 30 天内截止自动在对话开头提醒 |
+
+---
+
+## bosszp（Boss 直聘自动化外联）
+
+面向真实投递场景的 Boss 直聘自动化 skill，基于已登录 Chrome 的 CDP 会话执行批量外联。
+
+**自动触发条件：** Boss直聘/BossZP 自动投递、批量打招呼、Chrome unavailable、CDP 连接失败、投递结果统计
+
+### 核心能力
+
+| 能力 | 说明 |
+|---|---|
+| 生产批次执行 | 发送问候语 + 上传简历图片，并写入 CSV |
+| CDP 稳定性增强 | 自动重试 attach，失败时输出诊断与 hint |
+| 一键故障排查 | `npm run debug:cdp` 快速定位 Chrome/CDP 不可用原因 |
+| 自定义投递时间 | 支持 `--time/--days/--timezone` 直接调度 |
+| 批次结果汇总 | 输出 total、已投递、投递失败和 blocker 分类 |
+
+### 典型命令
+
+```bash
+npm install
+./bin/launch-chrome.sh 9222
+npm run debug:cdp
+npm run run:scheduled -- --time 16:00 --days weekdays --timezone Asia/Shanghai
+npm run prod:apply
+```
 
 ---
 
